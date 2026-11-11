@@ -69,7 +69,7 @@ const View = () => {
            */
           else {
             return dispatch(SET_DELIVERY_METHOD({
-              cart: response_RemovePickupDelivery.removePickupStore,
+              cart: response_RemovePickupDelivery.data.removePickupStore,
               delivery: value
             }))
           }

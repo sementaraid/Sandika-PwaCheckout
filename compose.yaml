@@ -1,0 +1,15 @@
+# Runs the checkout demo behind the shared Caddy reverse proxy.
+# The container joins the external `web` network as `sandika-checkout`.
+# No ports are published here; Caddy is the only way in.
+services:
+  sandika-checkout:
+    build: .
+    image: sandika-checkout-demo
+    container_name: sandika-checkout
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

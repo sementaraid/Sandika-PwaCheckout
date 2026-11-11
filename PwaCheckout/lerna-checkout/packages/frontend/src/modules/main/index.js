@@ -3,6 +3,7 @@ import AlertTemplate from "react-alert-template-basic";
 import { Navigate } from "react-router-dom";
 import Checkout from "@app/modules/checkout";
 import { useQuery } from "@app/helper/useQuery";
+import { IS_DEMO } from "@app/helper/demo";
 
 
 
@@ -22,7 +23,7 @@ const AlertProvider = ({ children }) => {
 
 
 const App = (props) => {
-  const STATE = useQuery();
+  const STATE = useQuery() || (IS_DEMO ? "demo" : null);
 
   switch (STATE) {
     case null:

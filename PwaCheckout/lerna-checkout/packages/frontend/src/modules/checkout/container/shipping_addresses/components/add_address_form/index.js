@@ -327,11 +327,11 @@ const AddAddressForm = ({ data }) => {
             </div>
             <div className="form-row">
               <div className="form-group col-md-12 google-maps">
-                <GoogleMaps
+                {STORE_CONFIG.icube_pinlocation_gmap_key && <GoogleMaps
                   gmap_key={STORE_CONFIG.icube_pinlocation_gmap_key}
                   mapPosition={mapPosition}
                   dragMarkerDone={onDragPosition}
-                />
+                />}
               </div>
             </div>
             <div className="form-row">

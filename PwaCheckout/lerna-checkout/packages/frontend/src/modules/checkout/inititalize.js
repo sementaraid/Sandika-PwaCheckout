@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { GQLClientRequest } from "@app/graphql/client";
 import { config } from "@app/config.json";
+import { IS_DEMO } from "@app/helper/demo";
 import {
   SCHEMA_STORE_CONFIG,
   SCHEMA_GET_CART,
@@ -96,7 +97,7 @@ const useInitialData = () => {
        * --------------------------------------------------------
        */
       const script = document.createElement('script');
-      if (!document.getElementById("snap-midtrans")) {
+      if (!IS_DEMO && !document.getElementById("snap-midtrans")) {
         const snapSrcUrl = response_StoreConfig.data.storeConfig.snap_is_production === "1" ? 'https://app.midtrans.com/snap/snap.js' : 'https://app.sandbox.midtrans.com/snap/snap.js';
         const myMidtransClientKey = response_StoreConfig.data.storeConfig.snap_client_key;
 

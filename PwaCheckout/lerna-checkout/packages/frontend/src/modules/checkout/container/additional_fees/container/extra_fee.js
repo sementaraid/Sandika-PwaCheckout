@@ -193,7 +193,7 @@ const View = ({ extra_fee, applied_extra_fee, cart_id }) => {
       const response_UpdateExtraFeeOnCart = await GQLClientRequest(SCHEMA_UPDATE_EXTRAFEE_ON_CART, body)
       if (!response_UpdateExtraFeeOnCart) { throw response_UpdateExtraFeeOnCart }
       dispatch(REFRESH_CART_ON_EXTRAFEE_CHANGE({
-        cart: response_UpdateExtraFeeOnCart.updateExtraFeeOnCart.cart
+        cart: response_UpdateExtraFeeOnCart.data.updateExtraFeeOnCart.cart
       }))
     }
     catch (err) {

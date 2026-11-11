@@ -1,0 +1,7 @@
+.git
+**/node_modules
+**/build
+PwaCheckout/view
+PwaCheckout/lerna-checkout/packages/backend
+**/.env
+**/.env.*

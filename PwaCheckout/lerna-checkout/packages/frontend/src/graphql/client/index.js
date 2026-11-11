@@ -1,4 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
+import { IS_DEMO } from '@app/helper/demo';
+import { mockRequest } from '@app/mock/server';
 
 const GQLClient = new GraphQLClient(`http://localhost:5000/graphql`, {
   credentials: 'include',
@@ -8,6 +10,13 @@ const GQLClient = new GraphQLClient(`http://localhost:5000/graphql`, {
 });
 
 const GQLClientRequest = async (query, variable = {}) => {
+  /**
+   * DEMO MODE: answer from the in-memory mock instead of the backend
+   */
+  if (IS_DEMO) {
+    return mockRequest(query, variable);
+  }
+
   try {
     const response = await GQLClient.request(query, variable);
     if (!response) {

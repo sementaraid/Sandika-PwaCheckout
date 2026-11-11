@@ -24,7 +24,7 @@ const View = () => {
         if (!response_UpdateGuestEmail) { throw new response_UpdateGuestEmail }
 
         return dispatch(REFRESH_CART({
-          cart: response_UpdateGuestEmail.setGuestEmailOnCart.cart
+          cart: response_UpdateGuestEmail.data.setGuestEmailOnCart.cart
         }))
       }
       catch (err) {

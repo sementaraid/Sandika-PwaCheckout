@@ -13,7 +13,7 @@
     "graphql": "^16.0.1",
     "graphql-request": "^3.6.1",
     "ncp": "^2.0.0",
-    "node-sass": "^6.0.1",
+    "sass": "1.32.13",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
@@ -35,7 +35,9 @@
     "dev": "craco start",
     "prod": "rm -rf ./build && craco build && node build.js",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "demo": "REACT_APP_MOCK=true REACT_APP_LOCALE=id-ID REACT_APP_LOCALE_CURRENCY=IDR NODE_OPTIONS=--openssl-legacy-provider craco start",
+    "build:demo": "REACT_APP_MOCK=true REACT_APP_LOCALE=id-ID REACT_APP_LOCALE_CURRENCY=IDR NODE_OPTIONS=--openssl-legacy-provider craco build"
   },
   "eslintConfig": {
     "extends": [
