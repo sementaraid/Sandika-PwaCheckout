@@ -24,6 +24,9 @@ Sedangkan lingkup kerja frontend ada di folder `packages/frontend`
 ## Script atau Command
 #### Install Lerna
 ```yarn global add lerna``` <br/>
+#### Siapkan Environment
+Salin `PwaCheckout/lerna-checkout/.env.example` menjadi `.env`, lalu isi nilainya. File `.env` tidak di-commit.<br/>
+```cp .env.example .env```<br/>
 #### Install Lerna Project Packages Dependencies
 ```lerna bootstrap```<br/>
 #### Run Lerna Project (Sandika PWA Checkout)

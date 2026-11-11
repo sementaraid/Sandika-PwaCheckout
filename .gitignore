@@ -1,0 +1,6 @@
+# Local environment files hold secrets; commit .env.example instead
+.env
+.env.*
+!.env.example
+
+node_modules/
